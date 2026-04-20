@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Lung Sound Analysis</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("/static/imgh8.jpg");
+background-size:cover;
+background-position:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+
+background:white;
+padding:40px;
+border-radius:10px;
+width:350px;
+text-align:center;
+box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+
+}
+
+input{
+
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+
+}
+
+button{
+
+width:100%;
+padding:10px;
+background:#1e90ff;
+border:none;
+color:white;
+font-size:16px;
+cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Lung Sound Analysis</h2>
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+
+<input type="text" name="patient" placeholder="Patient Name" required>
+
+<input type="file" name="audio" required>
+
+<button type="submit">Analyze Lung Sound</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

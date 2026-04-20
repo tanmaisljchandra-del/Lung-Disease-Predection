@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>AI Lung Disease Detection Report</title>
+
+<style>
+
+body{
+font-family:Arial;
+background-image:url("/static/imgh8.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+padding:40px;
+}
+
+.report{
+background:rgba(255,255,255,0.95);
+max-width:900px;
+margin:auto;
+padding:40px;
+box-shadow:0px 0px 10px gray;
+}
+
+h2{
+text-align:center;
+}
+
+img{
+width:100%;
+margin-top:20px;
+border:1px solid #ddd;
+}
+
+.result{
+background:#e8f5e9;
+padding:20px;
+margin-top:20px;
+font-size:18px;
+}
+
+.section{
+margin-top:30px;
+}
+
+ul{
+margin-top:10px;
+}
+
+button{
+padding:12px 25px;
+background:#2e7d32;
+color:white;
+border:none;
+font-size:16px;
+margin-top:25px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="report">
+
+<h2>AI Lung Disease Detection Report</h2>
+
+<p><b>Patient Name:</b> {{patient}}</p>
+
+<div class="result">
+
+<b>Detected Disease:</b> {{disease}} <br><br>
+{% if disease != "Healthy" %}
+<p><b>Severity Level:</b> {{severity}}</p>
+{% endif %}
+
+</div>
+
+
+<div class="section">
+
+<h3>AI Analysis</h3>
+
+<p>{{explanation}}</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>Normal Lung Sound Reference</h3>
+
+<p>{{range_info}}</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>Lung Sound Waveform</h3>
+
+<img src="/{{waveform}}">
+
+</div>
+
+
+<div class="section">
+
+<h3>Mel Spectrogram</h3>
+
+<img src="/{{spectrogram}}">
+
+</div>
+
+
+<div class="section">
+
+<h3>AI Recommendations</h3>
+
+<ul>
+
+{% for r in recommendations %}
+<li>{{r}}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<p>
+This prediction is generated using an AI respiratory sound analysis system.
+It is intended for research and educational purposes only and should not
+replace professional medical diagnosis.
+</p>
+
+</div>
+
+
+<a href="/download">
+<button>Download PDF Report</button>
+</a>
+
+</div>
+
+</body>
+</html>

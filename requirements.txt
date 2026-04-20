@@ -1,0 +1,8 @@
+flask
+librosa
+numpy
+matplotlib
+fpdf
+tensorflow
+scikit-learn
+gunicorn
