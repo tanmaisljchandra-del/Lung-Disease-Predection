@@ -6,3 +6,4 @@ matplotlib
 fpdf
 soundfile
 resampy
+setuptools
