@@ -5,3 +5,6 @@ librosa
 matplotlib
 fpdf
 soundfile
+audioread
+numba
+resampy
